@@ -1,0 +1,924 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prathamesh Men's Salon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+rel="stylesheet"
+>
+
+<style>
+
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: #080b0f;
+    overflow-x: hidden;
+}
+
+
+/* ================= BACKGROUND ================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(0, 83, 145, .18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(0, 68, 130, .15),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050608,
+            #11161b 50%,
+            #050608
+        );
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: .13;
+
+    background-image:
+        url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    height: 78px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
+    border-bottom: 1px solid rgba(255,255,255,.18);
+
+    background: rgba(3,5,7,.32);
+
+    backdrop-filter: blur(5px);
+}
+
+.nav {
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo-area h1 {
+    font-size: 25px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.logo-area h1 span {
+    color: #348de8;
+    font-weight: 500;
+}
+
+.logo-area p {
+    font-size: 15px;
+    margin-top: 5px;
+    letter-spacing: .3px;
+    font-weight: 600;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 0 25px;
+
+    border-right: 1px solid rgba(255,255,255,.2);
+
+    transition: .25s;
+}
+
+nav a:last-child {
+    border: 0;
+}
+
+nav a:hover {
+    color: #4da2ff;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 570px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,6,8,.96) 0%,
+            rgba(3,6,8,.78) 34%,
+            rgba(3,6,8,.2) 70%,
+            rgba(3,6,8,.4) 100%
+        ),
+
+        url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            0deg,
+            #080b0f 0%,
+            transparent 18%,
+            transparent 85%,
+            rgba(0,0,0,.4)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1200px;
+    width: 100%;
+
+    margin: auto;
+
+    padding: 90px 55px 40px;
+}
+
+.hero-content h2 {
+    font-size: 51px;
+    font-style: italic;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    text-shadow: 0 3px 10px #000;
+
+    display: inline-block;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.4);
+
+    padding-bottom: 8px;
+}
+
+.hero-content p {
+    margin-top: 16px;
+
+    font-size: 19px;
+    line-height: 1.45;
+
+    max-width: 400px;
+
+    text-shadow: 0 2px 6px #000;
+}
+
+
+/* ================= BUTTON ================= */
+
+.btn {
+    display: inline-block;
+
+    margin-top: 24px;
+
+    background:
+        linear-gradient(
+            #0879df,
+            #0450ad
+        );
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border: 1px solid #126fca;
+
+    border-radius: 4px;
+
+    padding: 10px 28px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.45);
+
+    transition: .25s;
+
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.15);
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 28px 55px 40px;
+}
+
+.section-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    font-size: 29px;
+
+    font-style: italic;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+
+    width: 42px;
+    height: 1px;
+
+    background: #aaa;
+}
+
+
+/* ================= SERVICES ================= */
+
+.services {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,32,35,.8),
+            rgba(7,9,11,.96)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
+
+    text-align: center;
+
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    border-color: #328fe9;
+}
+
+.card img {
+    width: 100%;
+
+    height: 155px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 10px 12px 12px;
+}
+
+.card h3 {
+    font-size: 21px;
+
+    margin-bottom: 2px;
+}
+
+.card p {
+    font-size: 13px;
+
+    color: #ddd;
+}
+
+.price {
+    font-size: 21px;
+
+    font-weight: 800;
+
+    margin-top: 2px;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 5px;
+}
+
+.gallery img {
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    transition: .3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.025);
+
+    filter: brightness(1.15);
+}
+
+
+/* ================= BOOKING ================= */
+
+.booking {
+    max-width: 930px;
+
+    margin: auto;
+}
+
+.booking-box {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,32,35,.8),
+            rgba(7,9,11,.96)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    padding: 35px 25px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
+}
+
+.booking-box p {
+    font-size: 16px;
+
+    color: #ddd;
+
+    margin-bottom: 5px;
+}
+
+.booking-btn {
+    min-width: 230px;
+
+    text-align: center;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    border-top:
+        1px solid rgba(255,255,255,.2);
+
+    text-align: center;
+
+    padding: 20px 20px 35px;
+
+    background:
+        rgba(5,7,9,.45);
+}
+
+.contact h2 {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    font-size: 27px;
+}
+
+.contact h2::before,
+.contact h2::after {
+    content: "";
+
+    width: 42px;
+    height: 1px;
+
+    background: #aaa;
+}
+
+.contact p {
+    margin-top: 5px;
+
+    font-size: 15px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+    header {
+        height: auto;
+        position: absolute;
+    }
+
+    .nav {
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 13px;
+    }
+
+    nav a {
+        padding: 0 10px;
+
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 650px;
+
+        background-position: 65% center;
+    }
+
+    .hero-content {
+        padding: 170px 25px 50px;
+    }
+
+    .hero-content h2 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 25px 20px 35px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery img {
+        height: 145px;
+    }
+}
+
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width: 430px) {
+
+    .logo-area h1 {
+        font-size: 21px;
+    }
+
+    .logo-area p {
+        font-size: 12px;
+    }
+
+    nav a {
+        padding: 0 7px;
+
+        font-size: 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="nav">
+
+        <div class="logo-area">
+
+            <h1>
+                Prathamesh
+                <span>Men's Salon</span>
+            </h1>
+
+            <p>
+                Sharp • Stylish • Confident
+            </p>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#gallery">
+                Gallery
+            </a>
+
+            <a href="#booking">
+                Book
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h2>
+            Upgrade Your Style
+        </h2>
+
+        <p>
+            Trendy Haircuts, Beard Grooming
+            <br>
+            &amp; Spa Treatments for Men
+        </p>
+
+
+        <!-- GOOGLE FORM -->
+
+        <a
+            href="https://forms.gle/G1wenXHj5LTjSo4w6"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Book Appointment
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section
+    class="section"
+    id="services"
+>
+
+    <h2 class="section-title">
+        Our Services
+    </h2>
+
+
+    <div class="services">
+
+
+        <!-- HAIRCUT -->
+
+        <article class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1599351431202-1e0f0d6d9d3f?auto=format&fit=crop&w=800&q=85"
+                alt="Men's Haircut"
+            >
+
+            <div class="card-body">
+
+                <h3>
+                    Men's Haircut
+                </h3>
+
+                <p>
+                    Classic &amp; Modern Cuts
+                </p>
+
+                <div class="price">
+                    ₹500
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- BEARD -->
+
+        <article class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=85"
+                alt="Beard Grooming"
+            >
+
+            <div class="card-body">
+
+                <h3>
+                    Beard Grooming
+                </h3>
+
+                <p>
+                    Sharp Trims &amp; Styling
+                </p>
+
+                <div class="price">
+                    ₹300
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- SPA -->
+
+        <article class="card">
+
+            <img
+                src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=800&q=85"
+                alt="Men's Spa"
+            >
+
+            <div class="card-body">
+
+                <h3>
+                    Men's Spa
+                </h3>
+
+                <p>
+                    Relax &amp; Refresh
+                </p>
+
+                <div class="price">
+                    ₹800
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section
+    class="section"
+    id="gallery"
+>
+
+    <h2 class="section-title">
+        Style Gallery
+    </h2>
+
+
+    <div class="gallery">
+
+        <img
+            src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=85"
+            alt="Hair style"
+        >
+
+        <img
+            src="https://images.unsplash.com/photo-1593702295094-aea5e7a4f3e7?auto=format&fit=crop&w=800&q=85"
+            alt="Hair style"
+        >
+
+        <img
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=85"
+            alt="Beard grooming"
+        >
+
+        <img
+            src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=800&q=85"
+            alt="Men's style"
+        >
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOKING ================= -->
+
+<section
+    class="section"
+    id="booking"
+>
+
+    <div class="booking">
+
+        <h2 class="section-title">
+            Book An Appointment
+        </h2>
+
+
+        <div class="booking-box">
+
+            <p>
+                Ready for a fresh new look?
+            </p>
+
+            <p>
+                Fill out our appointment form and
+                choose your preferred service.
+            </p>
+
+
+            <!-- GOOGLE FORM -->
+
+            <a
+                href="https://forms.gle/G1wenXHj5LTjSo4w6"
+                class="btn booking-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Confirm Booking
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<footer class="contact">
+
+    <h2>
+        Contact Us
+    </h2>
+
+    <p>
+        Email: mensalon@example.com
+    </p>
+
+    <p>
+        Phone: +91 98765 43210
+    </p>
+
+    <p>
+        Address: Main Road, Pune
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const buttons =
+            document.querySelectorAll(".booking-btn");
+
+        buttons.forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    console.log(
+                        "Opening Prathamesh Men's Salon booking form..."
+                    );
+
+                }
+            );
+
+        });
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
+```
